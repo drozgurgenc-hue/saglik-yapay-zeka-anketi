@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sağlık Alanında Yapay Zeka Uygulamalarına Güven ve Kullanım Tercihleri Anketi</title> <style>
+    :root{
+      --bg:#0f172a; --panel:#111827; --muted:#94a3b8; --text:#e5e7eb;
+      --brand:#22c55e; --brand2:#06b6d4; --danger:#ef4444; --warn:#f59e0b;
+      --card:#0b1220; --border:#1f2937;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(160deg,#0b1220,#0f172a);color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-size:18px; line-height:1.6;}
+    header{padding:28px 16px 0}
+    .container{max-width:980px;margin:0 auto;padding:16px}
+    .card{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    h1{font-size:1.6rem;margin:.2rem 0 .3rem}
+    h2{font-size:1.3rem;margin:.2rem 0 .8rem}
+    p.lead{color:var(--muted);margin:.2rem 0 .6rem}
+    label{display:block;margin:10px 0;color:#d1d5db}
+    .inline label{display:inline-flex;align-items:center;gap:10px;margin-right:18px}
+    input[type="text"],input[type="number"],select,textarea{width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:12px;min-height:44px}
+    select{min-height:44px}
+    input[type="radio"],input[type="checkbox"]{width:22px;height:22px}
+    textarea{min-height:96px}
+    .muted{color:var(--muted);font-size:.95rem}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:800px){.row{grid-template-columns:1fr}}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid var(--border);cursor:pointer;background:var(--card);color:var(--text);min-height:44px}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));border-color:transparent;color:#06220f;font-weight:700}
+    .btn.ghost{background:transparent}
+    .btn.danger{background:var(--danger);color:#fff;border:none}
+    .btn[disabled]{opacity:.6;cursor:not-allowed}
+    .spinner{display:inline-block;width:18px;height:18px;border:3px solid #fff;border-right-color:transparent;border-radius:50%;animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .req{color:#93c5fd}
+    .hidden{display:none}
+    .hr{height:1px;background:var(--border);margin:16px 0}
+    .progress{height:12px;background:var(--card);border:1px solid var(--border);border-radius:999px;overflow:hidden}
+    .bar{height:100%;background:linear-gradient(90deg,var(--brand),var(--brand2));width:0%}
+    .kbd{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--card);border:1px solid var(--border);border-radius:6px;padding:2px 6px}
+    .invalid{border-color:var(--danger)!important;outline:0}
+    .warn{color:var(--warn);font-size:.95rem}
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+        <div>
+          <h1 id="title">Sağlık Alanında Yapay Zeka Uygulamalarına Güven ve Kullanım Tercihleri Anketi</h1>
+        </div>
+        <div style="min-width:240px">
+          <div id="progress" class="progress" role="progressbar" aria-labelledby="title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="bar" class="bar"></div></div>
+          <div class="muted" style="text-align:right;margin-top:6px"><span id="pct">0</span>% tamamlandı</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" aria-live="polite">
+
+    <!-- ONAM -->
+    <section id="sec-consent" class="card" aria-labelledby="h-consent">
+      <h2 id="h-consent">Onam</h2>
+      <p>Bu anket, sağlık ile ilgili olarak yapay zekâ uygulamalarının kullanımına ilişkin görüşlerinizi, güven düzeyinizi ve tercihlerinizi anlamayı amaçlamaktadır. Anket yaklaşık 4–6 dakika sürer. Hiçbir kişisel veri toplanmaz, yanıtlar tamamen anonimdir ve yalnızca bilimsel amaçlarla kullanılacaktır. Katılım tamamen gönüllülük esasına dayanır; istediğiniz anda ankete katılmayı bırakabilirsiniz. Bu bir sınav değildir, lütfen rahat olun ve sizin için en uygun olan seçeneği seçin. Çalışmadan dilediğiniz anda çekilebilirsiniz; bu durumda herhangi bir hak kaybınız olmayacaktır. Veriler yalnızca araştırmacılar tarafından değerlendirilecek ve üçüncü kişilerle paylaşılmayacaktır. Herhangi bir risk öngörülmemektedir.</p>
+      <div class="inline" role="radiogroup" aria-label="Onam">
+        <label><input type="radio" name="CONSENT" value="1" data-req="1" data-name="Onam"> Yukarıdaki bilgileri okudum, anladım ve gönüllü olarak katılmayı kabul ediyorum.</label>
+        <label><input type="radio" name="CONSENT" value="0" data-req="1" data-name="Onam"> Katılmak istemiyorum</label>
+      </div>
+      <div class="actions">
+        <button id="btn-consent" class="btn primary" onclick="nextFromConsent()">Devam</button>
+      </div>
+      <div id="consentWarn" class="warn" role="alert" aria-live="assertive"></div>
+    </section>
+
+    <!-- UYGUNLUK -->
+    <section id="sec-elig" class="card hidden" aria-labelledby="h-elig">
+      <h2 id="h-elig">Uygunluk</h2>
+      <div class="row">
+        <label>Yaşınız <span class="req">*</span>
+          <input type="number" id="AGE" min="18" max="120" placeholder="Örn. 34" data-req="1" data-name="Yaş">
+        </label>
+      </div>
+      <div id="eligWarn" class="warn" role="alert" aria-live="assertive"></div>
+      <div class="actions">
+        <button class="btn" onclick="backTo('sec-consent')">Geri</button>
+        <button id="btn-elig" class="btn primary" onclick="eligNext()">Devam</button>
+      </div>
+    </section>
+
+    <!-- A. DEMOGRAFİ -->
+    <section id="sec-a" class="card hidden" aria-labelledby="h-a">
+      <h2 id="h-a">Bölüm A — Demografik Bilgiler</h2>
+      <div class="row">
+        <label>Cinsiyetiniz nedir? <span class="req">*</span>
+          <select id="SEX" data-req="1" data-name="Cinsiyet">
+            <option value="">Seçiniz</option>
+            <option value="1">Kadın</option>
+            <option value="2">Erkek</option>
+            <option value="3">Belirtmek istemiyorum </option>
+          </select>
+        </label>
+        <label>Eğitim düzeyiniz nedir? <span class="req">*</span>
+          <select id="EDU" data-req="1" data-name="Eğitim düzeyi">
+            <option value="">Seçiniz</option>
+            <option value="1">İlkokul</option>
+            <option value="2">Ortaokul</option>
+            <option value="3">Lise</option>
+            <option value="4">Üniversite</option>
+            <option value="5">Lisansüstü</option>
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <label>Telefon, tablet veya bilgisayar kullanma sıklığınız nedir? <span class="req">*</span>
+          <select id="DIG_FREQ" data-req="1" data-name="Dijital cihaz kullanım sıklığı">
+            <option value="">Seçiniz</option>
+            <option value="1">Her gün</option>
+            <option value="2">Haftada birkaç gün</option>
+            <option value="3">Ayda birkaç kez</option>
+            <option value="4">Hiç</option>
+          </select>
+        </label>
+        <label>Kronik bir hastalığınız var mı? <span class="req">*</span>
+          <select id="CHRONIC" data-req="1" data-name="Kronik hastalık">
+            <option value="">Seçiniz</option>
+            <option value="1">Evet</option>
+            <option value="2">Hayır</option>
+            <option value="3">Emin değilim</option>
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <label>Sağlık güvenceniz nedir? <span class="req">*</span>
+          <select id="INSURANCE" data-req="1" data-name="Sağlık güvencesi">
+            <option value="">Seçiniz</option>
+            <option value="1">SGK</option>
+            <option value="2">Özel sigorta</option>
+            <option value="3">Yok</option>
+            <option value="4">Diğer</option>
+          </select>
+        </label>
+        <div></div>
+      </div>
+      <div id="awarn" class="warn" role="alert" aria-live="assertive"></div>
+      <div class="actions">
+        <button class="btn" onclick="backTo('sec-elig')">Geri</button>
+        <button id="btn-a" class="btn primary" onclick="aNext()">Devam</button>
+      </div>
+    </section>
+
+    <!-- B. GENEL KULLANIM (tek sayfa sorusu) -->
+    <section id="sec-b1" class="card hidden" aria-labelledby="h-b1">
+      <h2 id="h-b1">Bölüm B — Yapay zekâ ile genel kullanım</h2>
+      <label>Herhangi bir yapay zekâ uygulaması kullanıyor musunuz? <span class="req">*</span>
+        <select id="AI_USE" data-req="1" data-name="Yapay zekâ kullanımı">
+          <option value="">Seçiniz</option>
+          <option value="1">Evet, düzenli olarak kulanıyorum</option>
+          <option value="2">Bazen kullanıyorum</option>
+          <option value="3">Hayır kullanmıyorum</option>
+        </select>
+      </label>
+      <div id="b1warn" class="warn" role="alert" aria-live="assertive"></div>
+      <div class="actions">
+        <button class="btn" onclick="backTo('sec-a')">Geri</button>
+        <button id="btn-b1" class="btn primary" onclick="b1Next()">Devam</button>
+      </div>
+    </section>
+
+    <!-- B. HAYIR AKIŞI: alternatif kaynaklar -->
+    <section id="sec-b-alt" class="card hidden" aria-labelledby="h-b-alt">
+      <h2 id="h-b-alt">Sağlık ile ilgili bilgi edinmek için hangi kaynaklardan yararlanırsınız?</h2>
+      <p class="muted">Doktor ve yapay zekâ dışındaki kaynaklar. Birden çok seçeneği seçebilirsiniz.</p>
+      <div class="row" id="ALT_SRC" data-name="Alternatif kaynaklar" data-mincheck="1">
+        <label><input type="checkbox" data-code="ALT_SRC_SEARCH"> Google</label>
+        <label><input type="checkbox" data-code="ALT_SRC_YOUTUBE"> YouTube</label>
+        <label><input type="checkbox" data-code="ALT_SRC_IG_TIKTOK"> Instagram/TikTok</label>
+        <label><input type="checkbox" data-code="ALT_SRC_FB_WA"> Facebook/WhatsApp</label>
+        <label><input type="checkbox" data-code="ALT_SRC_WIKI_EKSI"> Wikipedia/Ekşi Sözlük</label>
+        <label><input type="checkbox" data-code="ALT_SRC_HEALTH_SITES"> Sağlık siteleri/dernekler</label>
+        <label><input type="checkbox" data-code="ALT_SRC_NEWS_BLOG"> Haber siteleri/bloglar</label>
+        <label><input type="checkbox" data-code="ALT_SRC_FAMILY"> Aile/arkadaş</label>
+        <label><input type="checkbox" data-code="ALT_SRC_PHARM"> Eczacı</label>
+        <label><input type="checkbox" data-code="ALT_SRC_NURSE"> Hemşire/sağlık personeli</label>
+      </div>
+      <label>Diğer (yazınız)
+        <input type="text" id="ALT_SRC_OTHER_TEXT" placeholder="Örn. forum adı">
+      </label>
+      <div id="b-altwarn" class="warn" role="alert" aria-live="assertive"></div>
+      <div class="actions">
+        <button class="btn" onclick="backTo('sec-b1')">Geri</button>
+        <button id="btn-b-alt" class="btn primary" onclick="finishAltPath('B')">Gönder ve bitir</button>
+      </div>
+    </section>
+
+    <!-- B. EVET AKIŞI: ayrıntılar -->
+    <section id="sec-b2" class="card hidden" aria-labelledby="h-b2">
+      <h2 id="h-b2">Genel kullanım ayrıntıları</h2>
+      <div class="row">
+        <label>En sık kullandığınız yapay zekâ uygulaması hangisidir?
+          <select id="AI_TOP" data-name="En sık kullanılan yapay zekâ uygulaması">
+            <option value="">Seçiniz</option>
+            <option value="1">ChatGPT</option>
+            <option value="2">Gemini</option>
+            <option value="3">Claude</option>
+            <option value="4">Copilot / Bing Chat</option>
+            <option value="5">Grok</option>
+            <option value="6">DeepSeek</option>
+            <option value="7">Diğer</option>
+            <option value="8">Kullanmıyorum</option>
+          </select>
+        </label>
+      </div>
+      <label>Yapay zekâyı genel olarak hangi amaçlarla kullanıyorsunuz? (birden çok seçeneği seçebilirsiniz)</label>
+      <div class="row" id="GEN_PURP" data-name="Genel kullanım amaçları">
+        <label><input type="checkbox" data-code="GEN_PURP_INFO"> Bilgi arama (soru yanıtlama, araştırma vb.)</label>
+        <label><input type="checkbox" data-code="GEN_PURP_TEXT"> Metin yazma veya özetleme</label>
+        <label><input type="checkbox" data-code="GEN_PURP_EDU"> Eğitim (ders çalışmak, öğrenme desteği vb.)</label>
+        <label><input type="checkbox" data-code="GEN_PURP_WORK"> İş amaçlı kullanım (rapor, sunum analiz vb.) </label>
+        <label><input type="checkbox" data-code="GEN_PURP_FUN"> Eğlence (sohbet, oyun vb.)</label>
+        <label><input type="checkbox" data-code="GEN_PURP_DAY"> Günlük yaşam (planlama, alışveriş vb.) </label>
+      </div>
+        <label><input type="checkbox" data-code="GEN_PURP_OTH"> Diğer</label>
+      </div>
+      <div id="bwarn" class="warn" role="alert" aria-live="assertive"></div>
+      <div class="actions">
+        <button class="btn" onclick="backTo('sec-b1')">Geri</button>
+        <button id="btn-b2" class="btn primary" onclick="bNext()">Devam</button>
+      </div>
+    </section>
+
+    <!-- C. SAĞLIKTA KULLANIM (tek soru) -->
+    <section id="sec-c1" class="card hidden" aria-labelledby="h-c1">
+      <h2 id="h-c1">Bölüm C — Sağlık konularında yapay zekâ uygulaması kullanımı</h2>
+      <label>Son 12 ay içinde sağlıkla ilgili sorularınız için yapay zekâ uygulaması kullandınız mı? <span class="req">*</span>
+        <select id="HAI_12M" data-req="1" data-name="Sağlıkta yapay zekâ uygulaması kullanımı (12 ay)">
+          <option value="">Seçiniz</option>
+          <option value="1">Evet</option>
+          <option value="2">Hayır</option>
+        </select>
+      </label>
+      <div id="c1warn" class="warn" role="alert" aria-live="assertive"></div>
+      <div class="actions">
+        <button class="btn" onclick="backTo('sec-b2')">Geri</button>
+        <button id="btn-c1" class="btn primary" onclick="c1Next()">Devam</button>
+      </div>
+    </section>
+
+    <!-- C. HAYIR AKIŞI: alternatif kaynaklar -->
+    <section id="sec-c-alt" class="card hidden" aria-labelledby="h-c-alt">
+      <h2 id="h-c-alt">Sağlık konusunda bilgi ednmek için hangi kaynaklardan yararlanırsınız?</h2>
+      <p class="muted">Doktor ve yapay zekâ dışındaki kaynaklar. Birden çok seçeneği seçebilirsiniz.</p>
+      <div class="row" id="ALT_SRC_C" data-name="Alternatif kaynaklar (C)" data-mincheck="1">
+        <label><input type="checkbox" data-code="ALT_SRC_SEARCH"> Google</label>
+        <label><input type="checkbox" data-code="ALT_SRC_YOUTUBE"> YouTube</label>
+        <label><input type="checkbox" data-code="ALT_SRC_IG_TIKTOK"> Instagram/TikTok</label>
+        <label><input type="checkbox" data-code="ALT_SRC_FB_WA"> Facebook/WhatsApp</label>
+        <label><input type="checkbox" data-code="ALT_SRC_WIKI_EKSI"> Wikipedia/Ekşi Sözlük</label>
+        <label><input type="checkbox" data-code="ALT_SRC_HEALTH_SITES"> Sağlık siteleri/dernekler</label>
+        <label><input type="checkbox" data-code="ALT_SRC_NEWS_BLOG"> Haber siteleri/bloglar</label>
+        <label><input type="checkbox" data-code="ALT_SRC_FAMILY"> Aile/arkadaş</label>
+        <label><input type="checkbox" data-code="ALT_SRC_PHARM"> Eczacı</label>
+        <label><input type="checkbox" data-code="ALT_SRC_NURSE"> Hemşire/sağlık personeli</label>
+      </div>
+      <label>Diğer (yazınız)
+        <input type="text" id="ALT_SRC_OTHER_TEXT_C" placeholder="Örn. forum adı">
+      </label>
+      <div id="c-altwarn" class="warn" role="alert" aria-live="assertive"></div>
+      <div class="actions">
+        <button class="btn" onclick="backTo('sec-c1')">Geri</button>
+        <button id="btn-c-alt" class="btn primary" onclick="finishAltPath('C')">Gönder ve bitir</button>
+      </div>
+    </section>
+
+    <!-- C. EVET AKIŞI: ayrıntılar -->
+    <section id="sec-c2" class="card hidden" aria-labelledby="h-c2">
+      <h2 id="h-c2">Sağlıkta kullanım ayrıntıları</h2>
+      <div class="row">
+        <label>Yapay zeka uygulamalarını hangi amaçlarla kullandınız? (birden çok seçeneği seçebilirsiniz) <span class="req">*</span></label>
+        <div class="row" id="HAI_PURP" data-mincheck="1" data-name="Sağlıkta kullanım amaçları">
+          <label><input type="checkbox" data-code="HAI_BASIC"> Temel bilgi almak</label>
+          <label><input type="checkbox" data-code="HAI_2ND"> İkinci görüş almak</label>
+          <label><input type="checkbox" data-code="HAI_LIFE"> Yaşam tarzı (beslenme veya egzersiz)</label>
+          <label><input type="checkbox" data-code="HAI_DRUG"> İlaçlar hakkında bilgi almak</label>
+          <label><input type="checkbox" data-code="HAI_MH"> Ruh sağlığı desteği almak</label>
+          <label><input type="checkbox" data-code="HAI_OTH"> Diğer</label>
+        </div>
+      </div>
+      <div class="row">
+        <label>Sağlıkla ilgili en çok hangi yapay zekâ uygulamasını kullandınız? <span class="req">*</span>
+          <select id="HAI_MODEL" data-req="1" data-name="Sağlıkta en çok kullanılan uygulama">
+            <option value="">Seçiniz</option>
+            <option value="1">ChatGPT</option>
+            <option value="2">Gemini</option>
+            <option value="3">Claude</option>
+            <option value="4">Copilot / Bing Chat</option>
+            <option value="5">Grok</option>
+            <option value="6">DeepSeek</option>
+            <option value="7">Diğer</option>
+          </select>
+        </label>
+        <label>Yapay zeka uygulamalarından alınan öneriler davranışınızı etkiler mi? <span class="req">*</span>
+          <select id="HAI_BEHAV" data-req="1" data-name="Davranış değişikliği">
+            <option value="">Seçiniz</option>
+            <option value="1">Sıklıkla</option>
+            <option value="2">Bazen</option>
+            <option value="3">Hiçbir zaman</option>
+          </select>
+        </label>
+      </div>
+      <label>Yapay zekâ uygulamalarını kullanmaya başlamadan önce hekim randevusuna erişiminiz nasıldı? <span class="req">*</span>
+        <select id="ACCESS" data-req="1" data-name="Hekime erişim">
+          <option value="">Seçiniz</option>
+          <option value="1">Kolay erişebiliyordum</option>
+          <option value="2">Bazen güçlük yaşıyordum</option>
+          <option value="3">Çoğunlukla erişemiyordum</option>
+        </select>
+      </label>
+      <div id="cwarn" class="warn" role="alert" aria-live="assertive"></div>
+      <div class="actions">
+        <button class="btn" onclick="backTo('sec-c1')">Geri</button>
+        <button id="btn-c2" class="btn primary" onclick="cNext()">Devam</button>
+      </div>
+    </section>
+
+    <!-- D. GÜVEN VE TERCİHLER (Likert blok üstte) -->
+    <section id="sec-d" class="card hidden" aria-labelledby="h-d">
+      <h2 id="h-d">Bölüm D — Güven ve tercihler</h2>
+      <p class="muted">Aşağıdaki önermeleri 1'den 5'e kadar puanlayın. 1 = Kesinlikle katılmıyorum, 5 = Kesinlikle katılıyorum.</p>
+      <div class="row">
+        <label>“Yapay zekâ uygulamalarının sağlıkla ilgili yanıtları genelde doğrudur.” <span class="req">*</span>
+          <select id="TRUST_ACC" data-req="1" data-name="Doğruluk">
+            <option value=""></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </label>
+        <label>“Yapay zekâ uygulamalarının yanıtları anlaşılır ve takip edilebilir.” <span class="req">*</span>
+          <select id="TRUST_COMP" data-req="1" data-name="Anlaşılabilirlik">
+            <option value=""></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <label>“Sağlıkla ilgili bilgi veren yapay zekâ uygulamalarının, yanlış yönlendirme ya da hatalı bilgi verme olasılığını azaltmak için dikkatli davrandığını düşünüyorum.” <span class="req">*</span>
+          <select id="TRUST_SAFE" data-req="1" data-name="Güvenlik">
+            <option value=""></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </label>
+        <label>“Yapay zekâ uygulamalarının yanıtları günceldir.” <span class="req">*</span>
+          <select id="TRUST_UPD" data-req="1" data-name="Güncellik">
+            <option value=""></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </label>
+      </div>
+      <label>Genel olarak “yapay zekâ uygulamalarının sağlıkla ilgili verdiği cevaplara güvenirim.” <span class="req">*</span>
+        <select id="TRUST_GLOBAL" data-req="1" data-name="Genel güven">
+          <option value=""></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+      </label>
+
+      <div class="hr"></div>
+      <label>Kişisel sağlık verilerimin yapay zekâ uygulamaları tarafından kullanılması konusunda endişeliyim. <span class="req">*</span>
+        <select id="PRIV_CONCERN" data-req="1" data-name="Gizlilik endişesi">
+          <option value=""></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+      </label>
+      <label>Yapay zeka uygulamalarının yanlış bilgi verme riski konusunda endişeliyim. <span class="req">*</span>
+        <select id="MISINFO_RISK" data-req="1" data-name="Yanlış bilgi endişesi">
+          <option value=""></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+      </label>
+
+      <div class="hr"></div>
+      <label>Yapay zeka ve hekimi kıyasladığınızda, daha çok hangisinin önerisine güvenirsiniz? <span class="req">*</span></label>
+      <div class="inline" data-name="Kime güvenirim" role="radiogroup" aria-label="Kime güvenirim">
+        <label><input type="radio" name="PREF_CLIN" value="1" data-req="1" data-name="Kime güvenirim">Kesinlikle hekime güvenirim</label>
+        <label><input type="radio" name="PREF_CLIN" value="2" data-req="1" data-name="Kime güvenirim"> Daha çok hekime güvenirim</label>
+        <label><input type="radio" name="PREF_CLIN" value="3" data-req="1" data-name="Kime güvenirim"> Her ikisine de eşit derecede güvenirim</label>
+        <label><input type="radio" name="PREF_CLIN" value="4" data-req="1" data-name="Kime güvenirim"> Daha çok yapay zekâya güvenirim</label>
+        <label><input type="radio" name="PREF_CLIN" value="5" data-req="1" data-name="Kime güvenirim"> Kesinlikle yapay zekâya güvenirim</label>
+      </div>
+
+      <div class="hr"></div>
+      <label>Sağlıkla ilgili hangi durumlarda yapay zekâ uygulamalarından yararlanırsınız? (birden çok seçeneği seçebilirsiniz)</label>
+      <div class="row" id="WHEN_USE" data-name="Ne zaman kullanırsınız">
+        <label><input type="checkbox" data-code="WHEN_NONURG"> Acil olmayan sorularım için</label>
+        <label><input type="checkbox" data-code="WHEN_URG"> Acil durumlarda yönlendirme almak için</label>
+        <label><input type="checkbox" data-code="WHEN_BASIC"> Genel sağlık bilgisi edinmek için</label>
+        <label><input type="checkbox" data-code="WHEN_2ND"> Tanı veya tedavi hakkında ikinci bir görüş almak için</label>
+        <label><input type="checkbox" data-code="WHEN_TREAT"> Tedavi seçeneklerini öğrenmek/planlamayı desteklemek için</label>
+        <label><input type="checkbox" data-code="WHEN_NONE"> Hiçbir durumda kullanmam</label>
+      </div>
+
+      <label>Sağlıkla ilgili hangi konularda yapay zekâ uygulamalarına güvenirim? (birden çok seçeneği seçebilirsiniz)</label>
+      <div class="row" id="TOPICS" data-name="Konular">
+        <label><input type="checkbox" data-code="TOP_GEN"> Genel sağlık bilgisi ve eğitim amaçlı içerikler</label>
+        <label><input type="checkbox" data-code="TOP_DRUG"> İlaçlar hakkında bilgi ve tedavi tavsiyeleri</label>
+        <label><input type="checkbox" data-code="TOP_NUT"> Beslenme tavsiyesi</label>
+        <label><input type="checkbox" data-code="TOP_EX"> Egzersiz ve fiziksel aktivite tavsiyeleri</label>
+        <label><input type="checkbox" data-code="TOP_MH"> Ruh sağlığı tavsiyesi</label>
+        <label><input type="checkbox" data-code="TOP_ER"> Acil durumlar için tavsiyeler</label>
+      </div>
+       <label><input type="checkbox" data-code="TOP_NON"> Hiçbiri</label>
+      </div>
+
+      <div class="row">
+        <label>Yapay zekâ uygulamalarının tıbbi önerilerine güven düzeyinizi puanlayınız 
+(1=çok düşük güven, 5=çok yüksek güven) <span class="req">*</span>
+          <select id="TRUST_MEDADV" data-req="1" data-name="Tıbbi öneriye güven">
+            <option value=""></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </label>
+        <label>Yapay zekâ uygulamalarının sağlıkla ilgili yanıtlarının genel kalitesimi puanlayınız 
+(1=düşük,5=yüksek)) <span class="req">*</span>
+          <select id="RATE_OVERALL" data-req="1" data-name="Genel kalite">
+            <option value=""></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="dwarn" class="warn" role="alert" aria-live="assertive"></div>
+      <div class="actions">
+        <button class="btn" onclick="backTo('sec-c2')">Geri</button>
+        <button id="btn-d" class="btn primary" onclick="dNext()">Devam</button>
+      </div>
+    </section>
+
+    <!-- E. KAPANIŞ -->
+    <section id="sec-e" class="card hidden" aria-labelledby="h-e">
+      <h2 id="h-e">Kapanış</h2>
+      <label>Eklemek istediğiniz görüşlerinizi yazabilirsiniz. (isteğe bağlı)
+        <textarea id="OPEN_COMMENT" placeholder="Görüşleriniz…"></textarea>
+      </label>
+      <div class="actions">
+        <button class="btn" onclick="backTo('sec-d')">Geri</button>
+        <button id="btn-submit" class="btn primary" onclick="submitForm()"><span class="btn-text">Gönder</span><span class="spinner hidden" aria-hidden="true" id="spin-submit"></span></button>
+        <button class="btn ghost" onclick="saveProgress()">Taslağı kaydet</button>
+        <button class="btn ghost" onclick="clearForm()">Temizle</button>
+      </div>
+      <div class="muted">Taslaklar tarayıcınızda yerel olarak saklanır.</div>
+    </section>
+
+    <!-- SONUÇ -->
+    <section id="sec-out" class="card hidden" aria-labelledby="h-out">
+      <h2 id="h-out">Teşekkürler</h2>
+      <p class="success">Yanıt kaydedildi. Aşağıdan veriyi <span class="kbd">CSV</span> olarak indirebilirsiniz.</p>
+      <div class="actions">
+        <button class="btn" onclick="downloadCSV()">Bu yanıtı CSV indir</button>
+        <button class="btn" onclick="downloadAllCSV()">Tüm yanıtları CSV indir</button>
+        <button class="btn ghost" onclick="flushPending()">Bekleyen gönderimleri yeniden dene</button>
+        <button class="btn danger" onclick="clearAllResponses()">Tüm yanıtları sil</button>
+        <button class="btn ghost" onclick="restart()">Yeni yanıt</button>
+      </div>
+      <div id="remoteStatus" class="muted" style="margin-top:6px" role="status" aria-live="polite"></div>
+      </section>
+
+  </main>
+
+  <footer>
+    <div class="container">© 2025 — Yanıtlar cihazınızda saklanır; ayrıca yapılandırılmış uç noktaya güvenli şekilde gönderilir.</div>
+  </footer>
+
+  <!-- Geliştirici/Test modu (yalnızca siz) -->
+  <div class="container" style="opacity:.9; font-size:.95rem">
+    <label class="inline"><input type="checkbox" id="DEV_BYPASS"> Test modu (sınırsız deneme gönderimi)</label>
+    <span class="muted">— Bu seçenek yalnızca sizin tarayıcınızda geçerlidir.</span>
+  </div>
+
+<script>
+  // ——— Yapılandırma ———
+  const REMOTE_ENDPOINT = "https://script.google.com/macros/s/AKfycbxwCJLYBbtx-f2pnakxBHqrZm3lvSHeMhB8co7vMv9vtHM2CcBXfRP_E-4wxchgaQjn/exec"; // ÇALIŞAN URL
+  const FORM_VERSION = '1.7.3';
+
+  // ——— 24 saatlik tekrar gönderim kilidi (Test modu hariç) ———
+  const LAST_SUBMIT_TS_KEY = 'ai_health_last_submit_ts';
+  function setLastSubmitTs(ms){ try{ localStorage.setItem(LAST_SUBMIT_TS_KEY, String(ms)); }catch{} }
+  function getLastSubmitTs(){ const v = localStorage.getItem(LAST_SUBMIT_TS_KEY); return v? Number(v) : 0 }
+  function devBypass(){ return localStorage.getItem('ai_dev_bypass')==='1' }
+  function canSubmitNow(){ if (devBypass()) return true; const last=getLastSubmitTs(); if(!last) return true; return (Date.now()-last) > 24*60*60*1000 }
+
+  // ——— Client ID ve sayaç ———
+  const CLIENT_ID_KEY='ai_health_cid';
+  const SUBMIT_SEQ_KEY='ai_health_submit_seq';
+  const FIRST_SEEN_KEY='ai_health_first_seen';
+  function getClientId(){ let id=localStorage.getItem(CLIENT_ID_KEY); if(!id){ id=crypto.randomUUID(); localStorage.setItem(CLIENT_ID_KEY,id);} return id }
+  function getFirstSeen(){ let t=localStorage.getItem(FIRST_SEEN_KEY); if(!t){ t=new Date().toISOString(); localStorage.setItem(FIRST_SEEN_KEY,t);} return t }
+  function bumpSubmitSeq(){ const n=Number(localStorage.getItem(SUBMIT_SEQ_KEY)||'0')+1; localStorage.setItem(SUBMIT_SEQ_KEY,String(n)); return n }
+  function getSubmitSeq(){ return Number(localStorage.getItem(SUBMIT_SEQ_KEY)||'0') }
+
+  // ——— Zaman ölçümü ———
+  let startTs=Date.now();
+
+  // ——— Bölüm geçişi ve ilerleme ———
+  const sections=["sec-consent","sec-elig","sec-a","sec-b1","sec-b-alt","sec-b2","sec-c1","sec-c-alt","sec-c2","sec-d","sec-e","sec-out"];
+  function go(id){sections.forEach(s=>document.getElementById(s).classList.toggle('hidden',s!==id));updateProgress();}
+  function backTo(id){go(id)}
+  function updateProgress(){const idx=sections.findIndex(id=>!document.getElementById(id).classList.contains('hidden'));const pct=Math.round(((idx+1)/sections.length)*100);document.getElementById('bar').style.width=pct+'%';document.getElementById('pct').textContent=pct;document.getElementById('progress').setAttribute('aria-valuenow',String(pct));}
+
+  // ——— Yardımcılar ———
+  function getRadio(name){const el=document.querySelector(`input[name="${name}"]:checked`);return el?el.value:""}
+  function getChecks(containerId){const obj={};document.querySelectorAll(`#${containerId} input[type=checkbox]`).forEach(ch=>obj[ch.dataset.code]=ch.checked?1:0);return obj}
+  function valNum(id){const el=document.getElementById(id); if(!el) return null; const v=el.value; if(v===''||v===null||v===undefined)return null; const n=Number(v); return isNaN(n)?null:n}
+  function valNumRadio(name){const v=getRadio(name); if(v==='') return null; const n=Number(v); return isNaN(n)?null:n}
+  function mean(arr){const f=arr.filter(x=>x!==null&&!isNaN(x)); if(!f.length) return null; return Number((f.reduce((a,b)=>a+b,0)/f.length).toFixed(2))}
+
+  // ——— Alan doğrulama ———
+  function clearSectionErrors(sec){document.querySelectorAll(`#${sec} .warn`).forEach(w=>{w.textContent=''}) ;document.querySelectorAll(`#${sec} .invalid`).forEach(el=>el.classList.remove('invalid'))}
+  function markError(el,msg,secWarnId){if(!el) return; el.classList.add('invalid'); const warn=document.getElementById(secWarnId); if(warn){warn.textContent=`${msg} Boş alanı doldurduktan sonra Devam'a basabilirsiniz.`}}
+  function validateRequiredInputs(sectionId){
+    clearSectionErrors(sectionId);
+    let ok=true;
+    document.querySelectorAll(`#${sectionId} [data-req="1"]`).forEach(el=>{
+      if(el.tagName==='SELECT' || el.type==='number' || el.type==='text'){
+        const empty=(el.value===null || el.value==='');
+        if(empty){ok=false; markError(el,`Lütfen "${el.dataset.name}" alanını doldurun.`, sectionId.replace('sec-','')+'warn');}
+      }
+      if(el.type==='radio'){
+        const name=el.name; const group=document.querySelectorAll(`#${sectionId} input[name="${name}"]`); const any=Array.from(group).some(r=>r.checked);
+        if(!any){ok=false; const host=group[0]?.closest('div')||group[0]; markError(host,`Lütfen "${el.dataset.name}" için seçim yapın.`, sectionId.replace('sec-','')+'warn');}
+      }
+    });
+    document.querySelectorAll(`#${sectionId} [data-mincheck]`).forEach(boxGroup=>{
+      const need=Number(boxGroup.dataset.mincheck)||1; const has=boxGroup.querySelectorAll('input[type=checkbox]:checked').length; if(has<need){ok=false; markError(boxGroup,`Lütfen "${boxGroup.dataset.name}" için en az ${need} seçim yapın.`, sectionId.replace('sec-','')+'warn');}
+    });
+    return ok;
+  }
+
+  // ——— Akış ———
+  function nextFromConsent(){
+    const v=getRadio('CONSENT');
+    if(v==='1'){go('sec-elig');}
+    else if(v==='0'){document.getElementById('consentWarn').textContent='Katılım olmadan anket devam etmez.'}
+    else {document.getElementById('consentWarn').textContent='Lütfen onam seçimi yapın. Boş alanı doldurduktan sonra Devam’a basabilirsiniz.'}
+  }
+  function eligNext(){
+    const ok=validateRequiredInputs('sec-elig');
+    if(!ok) return;
+    const age=parseInt(document.getElementById('AGE').value,10);
+    if(age<18){document.getElementById('eligWarn').textContent='Bu çalışma 18 yaş ve üzeri içindir.';return}
+    go('sec-a');
+  }
+  function aNext(){ if(validateRequiredInputs('sec-a')) go('sec-b1') }
+  function b1Next(){
+    const v=document.getElementById('AI_USE').value;
+    if(v===''){document.getElementById('b1warn').textContent='Lütfen seçim yapın.';return}
+    if(v==='3'){ go('sec-b-alt'); } else { go('sec-b2'); }
+  }
+  function bNext(){ go('sec-c1') }
+  function c1Next(){
+    const v=document.getElementById('HAI_12M').value;
+    if(v===''){document.getElementById('c1warn').textContent='Lütfen seçim yapın.';return}
+    if(v==='2'){ go('sec-c-alt'); } else { go('sec-c2'); }
+  }
+  function cNext(){ if(validateRequiredInputs('sec-c2')) go('sec-d') }
+  function dNext(){ if(validateRequiredInputs('sec-d')) go('sec-e') }
+
+  // ——— Uzak gönderim kuyruğu ———
+  const REMOTE_ENABLED = !!REMOTE_ENDPOINT;
+  const PENDING_KEY = 'ai_health_survey_pending';
+  function setRemoteStatus(msg, good){ const el=document.getElementById('remoteStatus'); if(!el) return; el.textContent=msg + pendingSuffix(); el.style.color = good? '#a7f3d0':'#fbbf24'; }
+  function pendingSuffix(){ const n=getPending().length; return n? ` | Bekleyen: ${n}`:'' }
+  function updatePendingBadge(){ setRemoteStatus(pendingSuffix()? 'Bekleyen gönderim var.':'', true) }
+  function enqueuePending(obj){ try{ const raw=localStorage.getItem(PENDING_KEY); const arr=raw?JSON.parse(raw):[]; arr.push(obj); localStorage.setItem(PENDING_KEY, JSON.stringify(arr)); updatePendingBadge(); }catch{} }
+  function getPending(){ try{ const raw=localStorage.getItem(PENDING_KEY); return raw? JSON.parse(raw):[] }catch{ return [] } }
+  function clearPending(){ localStorage.removeItem(PENDING_KEY); updatePendingBadge(); }
+  async function flushPending(){ if(!REMOTE_ENABLED){ setRemoteStatus('Uç nokta tanımlı değil.', false); return } const arr=getPending(); if(!arr.length){ setRemoteStatus('Bekleyen gönderim yok.', true); return } let ok=0,fail=0; for(const item of arr){ const r=await sendRemote(item); r.ok?ok++:fail++; } if(fail===0){ clearPending(); setRemoteStatus(`Tümü gönderildi (${ok}).`, true);} else { setRemoteStatus(`Gönderim: ${ok} ok, ${fail} hata.`, false);} }
+
+  async function sendRemote(payload){
+    if(!REMOTE_ENABLED) return {ok:false, skipped:true};
+    const isDev = devBypass();
+    try{
+      const json=JSON.stringify(payload);
+      const ctrl=new AbortController(); const t=setTimeout(()=>ctrl.abort(), 20000);
+      const res=await fetch(REMOTE_ENDPOINT, { method:'POST', body: json, signal: ctrl.signal });
+      clearTimeout(t);
+      let ok=false; try{ const data=await res.json(); ok=!!(data&&data.ok);}catch{ ok=res.ok }
+      if(!ok) throw new Error('remote-not-ok');
+      setRemoteStatus('Sunucuya gönderildi.', true);
+      return {ok:true};
+    }catch(e){ if(!isDev){ enqueuePending(payload); setRemoteStatus('İnternet gönderimi başarısız. Yerelde beklemeye alındı.', false);} else { setRemoteStatus('Test modu: Sunucu hatası görmezden gelindi.', false);} return {ok:false, error:e}; }
+  }
+
+  // ——— Zaman ve güven sinyali ———
+  function timeAlarmFlag(sec){
+    const aiUse=document.getElementById('AI_USE')?.value; // 3=Hayır (B-alt)
+    const hai=document.getElementById('HAI_12M')?.value;  // 2=Hayır (C-alt)
+    if(aiUse==='3' || hai==='2') return 0; // bu akışlarda işaretleme yok
+    if(sec>240) return 0; if(sec>=180) return 1; return 2; // 0=güvenilir,1=sınır,2=güvensiz
+  }
+
+  // ——— Veri derleme ———
+  function collect(){
+    const durSec = Math.round((Date.now()-startTs)/1000);
+    const platform = navigator.userAgentData?.platform || navigator.platform || '';
+    const data={
+      CONSENT: getRadio('CONSENT')===''?null:Number(getRadio('CONSENT')),
+      AGE: valNum('AGE'),
+      SEX: valNum('SEX'), EDU: valNum('EDU'), DIG_FREQ: valNum('DIG_FREQ'), CHRONIC: valNum('CHRONIC'), INSURANCE: valNum('INSURANCE'),
+      AI_USE: valNum('AI_USE'), AI_TOP: valNum('AI_TOP'),
+      ...getChecks('GEN_PURP'),
+      HAI_12M: valNum('HAI_12M'),
+      ...getChecks('HAI_PURP'),
+      HAI_MODEL: valNum('HAI_MODEL'), HAI_BEHAV: valNum('HAI_BEHAV'), ACCESS: valNum('ACCESS'),
+      TRUST_ACC: valNum('TRUST_ACC'), TRUST_COMP: valNum('TRUST_COMP'), TRUST_SAFE: valNum('TRUST_SAFE'), TRUST_UPD: valNum('TRUST_UPD'), TRUST_GLOBAL: valNum('TRUST_GLOBAL'),
+      PRIV_CONCERN: valNum('PRIV_CONCERN'), MISINFO_RISK: valNum('MISINFO_RISK'), TRUST_MEDADV: valNum('TRUST_MEDADV'), RATE_OVERALL: valNum('RATE_OVERALL'),
+      PREF_CLIN: valNumRadio('PREF_CLIN'),
+      ...getChecks('WHEN_USE'), ...getChecks('TOPICS'),
+      OPEN_COMMENT: document.getElementById('OPEN_COMMENT')?.value.trim() || null,
+      TRUST_MEAN: mean([valNum('TRUST_ACC'),valNum('TRUST_COMP'),valNum('TRUST_SAFE'),valNum('TRUST_UPD'),valNum('TRUST_GLOBAL')]),
+      // Alternatif kaynaklar (hangisi görünürse o dolacaktır)
+      ...getChecks('ALT_SRC'),
+      ...getChecks('ALT_SRC_C'),
+      ALT_SRC_OTHER_TEXT: (document.getElementById('ALT_SRC_OTHER_TEXT')?.value.trim() || document.getElementById('ALT_SRC_OTHER_TEXT_C')?.value.trim() || null),
+      ALT_PATH: null, // B_ALT veya C_ALT olarak doldurulur
+      // Meta
+      TS: new Date().toISOString(),
+      FORM_VERSION,
+      PLATFORM: platform,
+      UA: navigator.userAgent,
+      VP_W: window.innerWidth,
+      DURATION_SEC: durSec,
+      TIME_ALARM: timeAlarmFlag(durSec),
+      DEV_BYPASS: devBypass()?1:0,
+      CLIENT_ID: getClientId(),
+      SUBMIT_SEQ: getSubmitSeq()+1,
+      FIRST_SEEN_TS: getFirstSeen()
+    };
+    return data;
+  }
+
+  // ——— Alt akış bitirme (B veya C) ———
+  async function finishAltPath(which){
+    const secId = (which==='B') ? 'sec-b-alt' : 'sec-c-alt';
+    if(!validateRequiredInputs(secId)) return;
+
+    // Temel kontroller
+    const consent=getRadio('CONSENT'); if(consent!=='1'){ alert('Onam olmadan gönderilemez.'); go('sec-consent'); return }
+    const age=parseInt(document.getElementById('AGE').value,10); if(isNaN(age)||age<18){ alert('Uygunluk koşulu: 18+'); go('sec-elig'); return }
+
+    // 24s kilidi (Test modu açıksa devre dışı)
+    if(!canSubmitNow()){
+      alert('Bu tarayıcıdan 24 saat içinde yalnızca bir yanıt kabul ediyoruz. Yarın tekrar deneyebilirsiniz.\n(Eğer test ediyorsanız "Test modu" kutucuğunu işaretleyin.)');
+      return;
+    }
+
+    let data = collect();
+    data.ALT_PATH = (which==='B') ? 'B_ALT' : 'C_ALT';
+    data.TIME_ALARM = 0; // alt akışlarda zaman uyarısı yapılmaz
+
+    try{
+      const key='ai_health_survey_all'; const raw=localStorage.getItem(key); const arr=raw?JSON.parse(raw):[]; arr.push({ts:new Date().toISOString(),...data}); localStorage.setItem(key,JSON.stringify(arr));
+    }catch(e){ console.warn('Toplu yanıt kaydı başarısız',e) }
+
+    await sendRemote(data);
+    setLastSubmitTs(Date.now());
+    bumpSubmitSeq();
+    go('sec-out');
+  }
+
+  // ——— Gönderim ve indirme ———
+  let lastData=null; let submitting=false;
+  function lockSubmit(lock){ submitting=lock; const btn=document.getElementById('btn-submit'); const spin=document.getElementById('spin-submit'); if(!btn||!spin) return; btn.disabled=lock; spin.classList.toggle('hidden',!lock); }
+
+  async function submitForm(){
+    if(submitting) return; lockSubmit(true);
+    try{
+      if(!validateRequiredInputs('sec-d')){ go('sec-d'); return }
+      const consent=getRadio('CONSENT'); if(consent!=="1"){ alert('Onam olmadan gönderilemez.'); go('sec-consent'); return }
+      const age=parseInt(document.getElementById('AGE').value,10); if(isNaN(age)||age<18){ alert('Uygunluk koşulu: 18+'); go('sec-elig'); return }
+
+      // 24s kilidi (Test modu açıksa devre dışı)
+      if(!canSubmitNow()){
+        alert('Bu tarayıcıdan 24 saat içinde yalnızca bir yanıt kabul ediyoruz. Yarın tekrar deneyebilirsiniz.\n(Eğer test ediyorsanız "Test modu" kutucuğunu işaretleyin.)');
+        return;
+      }
+
+      lastData=collect();
+      lastData.ALT_PATH = lastData.ALT_PATH || 'MAIN';
+
+      try{ const key='ai_health_survey_all'; const raw=localStorage.getItem(key); const arr=raw?JSON.parse(raw):[]; arr.push({ts:new Date().toISOString(),...lastData}); localStorage.setItem(key,JSON.stringify(arr)); }catch(e){ console.warn('Toplu yanıt kaydı başarısız',e) }
+
+      await sendRemote(lastData);
+      setLastSubmitTs(Date.now());
+      bumpSubmitSeq();
+      go('sec-out');
+    } finally {
+      lockSubmit(false);
+    }
+  }
+
+  function getAllResponses(){ try{const raw=localStorage.getItem('ai_health_survey_all'); return raw?JSON.parse(raw):[]}catch{return[]} }
+  function downloadAllCSV(){ const all=getAllResponses(); if(!all.length){alert('Kayıtlı toplu yanıt yok.');return} const headers=Array.from(new Set(all.flatMap(o=>Object.keys(o)))); const rows=[headers.join(',')].concat(all.map(o=>headers.map(h=>formatCSV(o[h])).join(','))); download('ai_health_survey_all.csv',rows.join('\n'),'text/csv') }
+  function clearAllResponses(){ if(confirm('Tüm kaydedilmiş yanıtlar silinsin mi?')){ localStorage.removeItem('ai_health_survey_all'); alert('Toplu yanıtlar silindi.') } }
+  function toCSV(obj){ const headers=Object.keys(obj); const vals=headers.map(k=>formatCSV(obj[k])); return headers.join(',')+"\n"+vals.join(',')+"\n" }
+  function formatCSV(v){ if(v===null||v===undefined) return ''; const s=String(v).replace(/"/g,'""'); return /[",\n]/.test(s)?('"'+s+'"'):s }
+  function download(filename,content,type='text/plain'){ const blob=new Blob([content],{type}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=filename; document.body.appendChild(a); a.click(); a.remove(); }
+  function downloadCSV(){ if(!lastData) return; download('ai_health_survey.csv',toCSV(lastData),'text/csv') }
+  function restart(){ lastData=null; clearForm(); startTs=Date.now(); go('sec-consent') }
+  function clearForm(){ document.querySelectorAll('input[type=radio],input[type=checkbox]').forEach(el=>el.checked=false); document.querySelectorAll('input[type=text],input[type=number],textarea').forEach(el=>el.value=''); document.querySelectorAll('select').forEach(el=>el.value=''); ['awarn','bwarn','b1warn','c1warn','cwarn','dwarn','eligWarn','consentWarn','b-altwarn','c-altwarn'].forEach(id=>{const el=document.getElementById(id); if(el) el.textContent=''}); }
+  function saveProgress(){ try{localStorage.setItem('ai_health_survey_draft',JSON.stringify(collect())); alert('Taslak kaydedildi.')}catch{alert('Tarayıcı depolama izni yok gibi görünüyor.')}}
+
+  // ——— Global export (onclick güveni) ———
+  window.nextFromConsent=nextFromConsent; window.eligNext=eligNext; window.aNext=aNext; window.b1Next=b1Next; window.bNext=bNext; window.c1Next=c1Next; window.cNext=cNext; window.dNext=dNext; window.finishAltPath=finishAltPath; window.submitForm=submitForm; window.downloadAllCSV=downloadAllCSV; window.flushPending=flushPending; window.downloadCSV=downloadCSV; window.clearAllResponses=clearAllResponses; window.restart=restart; window.saveProgress=saveProgress; window.backTo=backTo;
+
+  // ——— Load ———
+  window.addEventListener('load', ()=>{
+    updateProgress();
+    updatePendingBadge();
+    // Test modu checkbox durumunu oku/bağla
+    const devBox=document.getElementById('DEV_BYPASS');
+    if(devBox){ devBox.checked = devBypass(); devBox.addEventListener('change',()=>{ if(devBox.checked){ localStorage.setItem('ai_dev_bypass','1') } else { localStorage.removeItem('ai_dev_bypass') } }); }
+  });
+</script>
+</body>
+</html>
